@@ -1,0 +1,240 @@
+
+{% extends "base.html" %}
+
+{% block title %}Exercises - AI Psych Buddy{% endblock %}
+
+{% block content %}
+
+<div class="container py-4 py-md-5">
+
+  <!-- Page Header -->
+  <div class="text-center mb-5">
+
+    <div class="icon-bubble bubble-lavender mx-auto mb-3">
+      <i class="bi bi-stars"></i>
+    </div>
+
+    <h2 class="page-title fw-bold mb-2">
+      Wellness Exercises
+    </h2>
+
+    <p class="text-muted-soft mx-auto mb-0"
+       style="max-width: 680px;">
+      Take a few moments for yourself with gentle exercises
+      designed for self-reflection, grounding, and relaxation.
+    </p>
+
+  </div>
+
+
+  <!-- Exercises -->
+  <div class="row g-4 mb-5">
+
+    <!-- CBT Reflection -->
+    <div class="col-md-4">
+
+      <a href="{% url 'exercises:cbt_new' %}"
+         class="text-decoration-none text-reset">
+
+        <div class="card-soft card-hover p-4 h-100">
+
+          <div class="icon-bubble bubble-lavender mb-4">
+            <i class="bi bi-lightbulb"></i>
+          </div>
+
+          <h5 class="fw-bold mb-2">
+            CBT-Style Reflection
+          </h5>
+
+          <p class="text-muted-soft small mb-4">
+            Explore a difficult situation, identify the thoughts
+            behind it, consider the evidence, and develop a
+            more balanced perspective.
+          </p>
+
+          <span class="small fw-semibold"
+                style="color:var(--buddy-primary);">
+
+            Start Reflection
+            <i class="bi bi-arrow-right ms-1"></i>
+
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <!-- Grounding -->
+    <div class="col-md-4">
+
+      <a href="{% url 'exercises:grounding_list' %}"
+         class="text-decoration-none text-reset">
+
+        <div class="card-soft card-hover p-4 h-100">
+
+          <div class="icon-bubble bubble-teal mb-4">
+            <i class="bi bi-tree"></i>
+          </div>
+
+          <h5 class="fw-bold mb-2">
+            Grounding Exercises
+          </h5>
+
+          <p class="text-muted-soft small mb-4">
+            Bring your attention back to the present moment
+            with 5-4-3-2-1 grounding and other simple exercises.
+          </p>
+
+          <span class="small fw-semibold"
+                style="color:var(--buddy-primary);">
+
+            Explore Grounding
+            <i class="bi bi-arrow-right ms-1"></i>
+
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+
+    <!-- Breathing -->
+    <div class="col-md-4">
+
+      <a href="{% url 'exercises:breathing' %}"
+         class="text-decoration-none text-reset">
+
+        <div class="card-soft card-hover p-4 h-100">
+
+          <div class="icon-bubble bubble-blue mb-4">
+            <i class="bi bi-wind"></i>
+          </div>
+
+          <h5 class="fw-bold mb-2">
+            Breathing Exercise
+          </h5>
+
+          <p class="text-muted-soft small mb-4">
+            Follow a simple visual breathing guide to slow
+            your pace and take a mindful pause.
+          </p>
+
+          <span class="small fw-semibold"
+                style="color:var(--buddy-primary);">
+
+            Start Breathing
+            <i class="bi bi-arrow-right ms-1"></i>
+
+          </span>
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- Recent Reflections -->
+  <section class="card-soft p-4 p-md-5">
+
+    <div class="d-flex justify-content-between
+                align-items-center flex-wrap gap-2 mb-3">
+
+      <div>
+
+        <div class="small fw-bold text-uppercase"
+             style="color:var(--buddy-coral);
+                    letter-spacing:.08em;">
+          Your Activity
+        </div>
+
+        <h5 class="fw-bold mb-0 mt-1">
+          Recent Reflections
+        </h5>
+
+      </div>
+
+      <a href="{% url 'exercises:cbt_list' %}"
+         class="btn btn-sm btn-outline-primary rounded-pill">
+
+        View All
+        <i class="bi bi-arrow-right ms-1"></i>
+
+      </a>
+
+    </div>
+
+
+    {% for r in recent_reflections %}
+
+      <a href="{% url 'exercises:cbt_detail' r.pk %}"
+         class="d-block text-decoration-none text-reset
+                py-3 border-bottom">
+
+        <div class="d-flex justify-content-between
+                    align-items-start gap-3">
+
+          <div class="text-truncate">
+
+            <span class="d-block text-truncate fw-semibold">
+              {{ r.automatic_thought|truncatechars:90 }}
+            </span>
+
+            <span class="small text-muted-soft">
+              Reflection
+            </span>
+
+          </div>
+
+          <span class="small text-muted-soft text-nowrap">
+            {{ r.created_at|date:"M d, Y" }}
+          </span>
+
+        </div>
+
+      </a>
+
+    {% empty %}
+
+      <div class="text-center py-4">
+
+        <div class="icon-bubble bubble-sage mx-auto mb-3">
+          <i class="bi bi-journal-heart"></i>
+        </div>
+
+        <p class="fw-semibold mb-1">
+          No reflections yet
+        </p>
+
+        <p class="text-muted-soft small mb-0">
+          Your completed reflections will appear here.
+        </p>
+
+      </div>
+
+    {% endfor %}
+
+  </section>
+
+
+  <!-- Wellness Disclaimer -->
+  <div class="disclaimer-box text-center small mt-4">
+
+    <i class="bi bi-info-circle-fill me-1"></i>
+
+    These exercises are wellness and self-reflection tools.
+    They are not a substitute for professional medical advice,
+    therapy, or emergency care.
+
+  </div>
+
+</div>
+
+{% endblock %}

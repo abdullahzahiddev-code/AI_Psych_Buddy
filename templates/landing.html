@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+
+{% block title %}AI Psych Buddy - Reflect, reset, take care{% endblock %}
+
+{% block content %}
+
+<section class="hero text-center mb-5">
+
+  <div class="mb-4">
+    <span class="badge rounded-pill bg-white px-3 py-2 shadow-sm fw-semibold"
+          style="color:var(--buddy-primary);">
+      <i class="bi bi-stars me-1"></i>
+      24/7 Wellness Companion
+    </span>
+  </div>
+
+  <h1 class="mb-3">
+    A calmer space to
+    <span class="hero-gradient-text">reflect, reset &amp; reconnect.</span>
+  </h1>
+
+  <p class="lead text-muted-soft mx-auto mb-4"
+     style="max-width:680px;">
+    Talk with a supportive AI buddy, understand your mood,
+    and explore gentle guided exercises whenever you need
+    a little time for yourself.
+  </p>
+
+  <div class="d-flex gap-3 justify-content-center flex-wrap">
+
+```
+<!-- LOGIN BUTTON -->
+<a href="{% url 'accounts:login' %}"
+   class="btn btn-outline-primary btn-lg rounded-pill px-5">
+  <i class="bi bi-box-arrow-in-right me-2"></i>
+  Login
+</a>
+
+<!-- REGISTER BUTTON -->
+<a href="{% url 'accounts:register' %}"
+   class="btn btn-primary btn-lg rounded-pill px-5">
+  Get Started
+  <i class="bi bi-arrow-right ms-2"></i>
+</a>
+```
+
+  </div>
+
+  <div class="d-flex justify-content-center flex-wrap gap-4 mt-4 pt-2">
+
+```
+<span class="small text-muted-soft">
+  <i class="bi bi-clock-fill me-1"
+     style="color:var(--buddy-coral);"></i>
+  Available anytime
+</span>
+
+<span class="small text-muted-soft">
+  <i class="bi bi-heart-fill me-1"
+     style="color:var(--buddy-coral);"></i>
+  Made for self-reflection
+</span>
+
+<span class="small text-muted-soft">
+  <i class="bi bi-shield-check me-1"
+     style="color:var(--buddy-sage-dark);"></i>
+  Safety-focused
+</span>
+```
+
+  </div>
+
+</section>
+
+<div class="disclaimer-box mb-5 text-center mx-auto"
+     style="max-width:800px;">
+
+<i class="bi bi-info-circle-fill me-1"></i>
+
+<strong>Important:</strong>
+{{ WELLNESS_DISCLAIMER }}
+
+</div>
+
+<section class="text-center mb-4">
+
+<span class="small fw-bold text-uppercase"
+     style="color:var(--buddy-coral);letter-spacing:.12em;">
+What you can do </span>
+
+  <h2 class="fw-bold mt-2 mb-2">
+    Tools for your everyday wellbeing
+  </h2>
+
+  <p class="text-muted-soft mx-auto mb-0"
+     style="max-width:620px;">
+    Simple features designed to help you pause, reflect,
+    understand how you feel, and take a mindful moment.
+  </p>
+
+</section>
+
+<section class="row g-4 mb-5">
+
+  <div class="col-md-6 col-lg-4">
+    <div class="card-soft card-hover p-4 h-100">
+
+```
+  <div class="icon-bubble bubble-rose mb-3">
+    <i class="bi bi-chat-heart"></i>
+  </div>
+
+  <h5 class="fw-bold mb-2">
+    24/7 AI Wellness Conversation
+  </h5>
+
+  <p class="text-muted-soft mb-0">
+    A kind, always-available listener that responds
+    using a curated wellness knowledge base.
+  </p>
+
+</div>
+```
+
+  </div>
+
+  <div class="col-md-6 col-lg-4">
+    <div class="card-soft card-hover p-4 h-100">
+
+```
+  <div class="icon-bubble bubble-amber mb-3">
+    <i class="bi bi-emoji-smile"></i>
+  </div>
+
+  <h5 class="fw-bold mb-2">
+    Mood Tracking
+  </h5>
+
+  <p class="text-muted-soft mb-0">
+    Check in with yourself each day and explore
+    simple mood trends over time.
+  </p>
+
+</div>
+```
+
+  </div>
+
+  <div class="col-md-6 col-lg-4">
+    <div class="card-soft card-hover p-4 h-100">
+
+```
+  <div class="icon-bubble bubble-lavender mb-3">
+    <i class="bi bi-lightbulb"></i>
+  </div>
+
+  <h5 class="fw-bold mb-2">
+    CBT-Style Self-Reflection
+  </h5>
+
+  <p class="text-muted-soft mb-0">
+    Explore difficult thoughts step by step and
+    work toward a more balanced perspective.
+  </p>
+
+</div>
+```
+
+  </div>
+
+  <div class="col-md-6 col-lg-4">
+    <div class="card-soft card-hover p-4 h-100">
+
+```
+  <div class="icon-bubble bubble-teal mb-3">
+    <i class="bi bi-tree"></i>
+  </div>
+
+  <h5 class="fw-bold mb-2">
+    Grounding &amp; Breathing
+  </h5>
+
+  <p class="text-muted-soft mb-0">
+    Use interactive 5-4-3-2-1 grounding and
+    visual breathing exercises to slow down.
+  </p>
+
+</div>
+```
+
+  </div>
+
+  <div class="col-md-6 col-lg-4">
+    <div class="card-soft card-hover p-4 h-100">
+
+```
+  <div class="icon-bubble bubble-rose mb-3">
+    <i class="bi bi-magic"></i>
+  </div>
+
+  <h5 class="fw-bold mb-2">
+    Personalized Wellness Suggestions
+  </h5>
+
+  <p class="text-muted-soft mb-0">
+    Discover gentle ideas based on your mood
+    and the conversations you have.
+  </p>
+
+</div>
+```
+
+  </div>
+
+  <div class="col-md-6 col-lg-4">
+    <div class="card-soft card-hover p-4 h-100">
+
+```
+  <div class="icon-bubble bubble-sage mb-3">
+    <i class="bi bi-shield-check"></i>
+  </div>
+
+  <h5 class="fw-bold mb-2">
+    Built-In Safety Guardrails
+  </h5>
+
+  <p class="text-muted-soft mb-0">
+    When crisis-related concerns arise, the app
+    directs users toward emergency and professional support.
+  </p>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<section class="card-soft text-center p-4 p-md-5 mb-4"
+         style="background:linear-gradient(135deg,var(--buddy-primary-soft),var(--buddy-peach-soft));">
+
+  <div class="icon-bubble bubble-rose mx-auto mb-3">
+    <i class="bi bi-heart-fill"></i>
+  </div>
+
+  <h3 class="fw-bold mb-2">
+    Take a moment for yourself.
+  </h3>
+
+  <p class="text-muted-soft mx-auto mb-4"
+     style="max-width:560px;">
+    Start with a conversation, check in with your mood,
+    or simply take a few minutes to breathe and reset.
+  </p>
+
+  <!-- LOGIN BUTTON -->
+
+<a href="{% url 'accounts:login' %}"
+  class="btn btn-primary rounded-pill px-4">
+Login to Continue <i class="bi bi-arrow-right ms-2"></i> </a>
+
+</section>
+
+{% endblock %}
